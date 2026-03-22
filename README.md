@@ -2,5 +2,5 @@
 this website is being used to track all of my assignments within this class :)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/44689c63-a6e5-423b-b94f-1d09a5dbdb8b" width="300">
+  <img src="https://github.com/user-attachments/assets/56abd950-e0ac-4f0e-8df2-647fd7edd01a" width="300">
 </p>
