@@ -1,121 +1,80 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import heroImg from './assets/200.gif'
+import gif1 from './assets/catworking.gif'
+import gif2 from './assets/punch.gif'
 import './App.css'
-const ICONS = import.meta.env.BASE_URL + 'icons.svg#'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const assignments = [
+    {
+      id: 1,
+      title: 'Assignment 1: Onboarding',
+      short: 'Create a website to maintain all assignments completed, read The Book of Shaders and I Want To Talk About Web GPU',
+      image: heroImg,
+    },
+    {
+      id: 2,
+      title: 'Assignment 2: Shader Live Coding',
+      short: 'A 1 minute animation using the Schwartz environment. Click here for all details on the assignment!',
+      image: heroImg,
+    },
+    {
+      id: 3,
+      title: 'Assignment 3: TBD',
+      short: 'tbddddd',
+      image: heroImg,
+    },
+    {
+      id: 4,
+      title: 'Assignment 4: TBD',
+      short: 'tbddddd',
+      image: heroImg,
+    },
+  ]
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="site-root">
+      <header className="site-header">
+        <div className="header-inner">
+          <div className="brand">Amanda Longo</div>
+          <div className="email">
+            <a href="mailto:aylongo@wpi.edu">aylongo@wpi.edu</a>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
+      <main className="site-main">
+        <div className="layout">
+          <section className="hero-left">
+            <h1 className="huge">CS4300</h1>
+            <h2 className="sub">Graphics, Simulation and Aesthetics</h2>
+            <p className="lead">
+              This course explores digital simulations and strategies for interactive representation. Students will examine and create digital simulations of real world phenonmenon, such as chemical diffusion models, models of artifical life, fluid simulations, and video feedback. The class is designed to encourage both technical and aesthetic exploration.
+            </p>
+            <div className="hero-gifs" aria-hidden>
+              <img src={gif1} alt="animation 1" />
+              <img src={gif2} alt="animation 2" />
+            </div>
+          </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href={`${ICONS}documentation-icon`}></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <aside className="sidebar" id="assignments">
+            <h3 className="sidebar-title">Assignments</h3>
+            <div className="sidebar-list">
+              {assignments.map((a) => (
+                <article className="card" key={a.id}>
+                  <div className="card-content">
+                    <h4>{a.title}</h4>
+                    <p className="card-desc">{a.short}</p>
+                  </div>
+                  <div className="card-thumb">
+                    <img src={a.image} alt="preview" />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </aside>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href={`${ICONS}social-icon`}></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href={`${ICONS}github-icon`}></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href={`${ICONS}discord-icon`}></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href={`${ICONS}x-icon`}></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href={`${ICONS}bluesky-icon`}></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      </main>
+    </div>
   )
 }
 
