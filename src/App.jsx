@@ -48,7 +48,8 @@ function App() {
             <h1 className="huge">CS4300</h1>
             <h2 className="sub">Graphics, Simulation and Aesthetics</h2>
             <p className="lead">
-              This course explores digital simulations and strategies for interactive representation. Students will examine and create digital simulations of real world phenonmenon, such as chemical diffusion models, models of artifical life, fluid simulations, and video feedback. The class is designed to encourage both technical and aesthetic exploration.
+              Hi! My name is Amanda Longo and this is my website for all of my completed assignments in CS4300!
+              This course is instructed by Charlie Roberts and This course explores digital simulations and strategies for interactive representation.
             </p>
             <div className="hero-gifs" aria-hidden>
               <img src={gif1} alt="animation 1" />
