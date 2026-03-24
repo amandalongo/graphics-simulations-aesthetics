@@ -225,6 +225,16 @@ fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
             feeback that the light spirals stood out to give the animation that
             galaxy vibe.
           </p>
+          <p
+            style={{
+              color: "var(--muted)",
+              fontSize: 14,
+              textAlign: "start",
+              marginTop: 20,
+            }}
+          >
+            <b>Note:</b> I used ChatGPT to help understand the concept of cycles and how to implement the 60 second looping into this animation, I think that with this assistance I tended to get a little more confused, especially when I was realizing that the cycling wasn't working as I expected (the cycles were less than 20-60 seconds) so this concept is something I want to learn a little more on my own! Next time, I think I would want to try more real time coding or just pasting in different fragments of code to create that animation. 
+          </p>
         </div>
       </main>
     </div>
