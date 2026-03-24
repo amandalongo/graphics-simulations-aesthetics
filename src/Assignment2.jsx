@@ -160,23 +160,23 @@ fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
             >
               <b>Technical:</b> I decided to go with composed (no interaction)
               by relying on the the frame uniform. This animation runs through
-              three phases. The first was a pulsing central dot and an expanding
-              ring, both driven by a sin-based pulse and shaped with smoothstep
-              to keep the edges clean. The second phase layers in radial spokes
-              computed using atan2 and sin, masked to an annular region using
-              two smoothstep calls working against each other. The third phase
-              introduces a grid of dots built with fract, where the scale shifts
-              between phases using floor. Running through all three is a
-              lastframe feedback loop that accumulates previous frames with a
-              slight rotation and decay each pass, which is what gives
-              everything that ghostly trailing effect. The transitions between
-              phases are handled by a phaseBlend variable derived from cycle %
-              20.0, so instead of snapping between sections it crossfades
-              smoothly. The one thing I struggled with was the 60-second cycle.
-              After looking into how it was supposed to work, the phases were
-              cycling way faster than they should have been and the timing just
-              wasn't adding up to 60 seconds like intended. Given the time
-              constraints, I decided to use this as a design choice rather than
+              three phases. The first was a pulsing circle and an expanding
+              ring, both made by a sin-based pulse and shaped with smoothstep to
+              keep the edges clean. The second phase uses radial spokes computed
+              using atan2 and sin, masked to an annular region using two
+              smoothstep calls working against each other. The third phase has a
+              grid of dots built with fract, where the scale shifts between
+              phases using floor. Running through all three is a lastframe
+              feedback loop that accumulates previous frames with a slight
+              rotation and decay each pass, which is what gives everything that
+              trailing effect. The transitions between phases are handled by a
+              phaseBlend variable derived from cycle % 20.0, so instead of
+              snapping between sections it crossfades smoothly. The one thing I
+              struggled with was the 60-second cycle. After looking into how it
+              was supposed to work, the phases were cycling way faster than they
+              should have been and the timing just wasn't adding up to 60
+              seconds like intended. Given the time constraint of the
+              assignment, I decided to use this as a design choice rather than
               an error.
             </p>
             <p
@@ -186,7 +186,21 @@ fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
                 textAlign: "start",
               }}
             >
-              <b>Aesthetic:</b> ....
+              <b>Aesthetic:</b> The goal of this animation was to start with a
+              basic shape, a circle since we had learned it during the second
+              class, and then I wanted to create something “interstellar” so
+              some sort of planet or galaxy vibe. I wanted it to start off more
+              cold colored (which is why i chose the blue and green) and then
+              when the animation got a little more complex, add in those warmer
+              colors to show speed and add more liveliness to it. the rings were
+              supposed to represent galaxy/saturn and then the dots, lines and
+              spinning mixed in with the pulsing lines are supposed to represent
+              like moving through space. I really liked how much emphasis the
+              pulse added to the overall vision. I wanted to use music to add
+              the final touch because I feel like sound really adds emotion and
+              emphasis on visuals, like all of the examples we watched in class.
+              I like techno and edm style music and this one song/beat I used
+              really matched the movements of the visual.
             </p>
           </div>
           <p
@@ -205,7 +219,14 @@ fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
             in or like the pulse makes it feel very mesmerizing in a way so it’s
             like very astral. I think it is a really good word to describe it."
             I feel as though this feedback and intial thoughts were spot on to
-            the vibe i was going for. I....
+            the vibe I was going for. I feel like the piece really does have
+            that interstellar vibe and I was glad to see that my vision was
+            shown in my peers' interpretations. I like the word "astral" that
+            was used to describe it, I think it really captures the essence of
+            the animation along with interstellar. It might even be a better
+            word to describe it! Reflecting on this I also noticed from the
+            feeback that the light spirals stood out to give the animation that
+            galaxy vibe.
           </p>
         </div>
       </main>
