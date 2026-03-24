@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import heroImg from './assets/200.gif'
 import gif1 from './assets/catworking.gif'
 import gif2 from './assets/punch.gif'
+import Assignment2 from './Assignment2'
+import Assignment1 from './Assignment1'
 import './App.css'
 
 function App() {
@@ -31,6 +33,53 @@ function App() {
       image: heroImg,
     },
   ]
+  // simple hash router
+  const [route, setRoute] = useState({ page: 'home', id: null })
+
+  useEffect(() => {
+    function parseHash() {
+      const h = window.location.hash || '#'
+      const parts = h.replace(/^#/, '').split('/').filter(Boolean)
+      if (parts[0] === 'assignments' && parts[1]) {
+        setRoute({ page: 'assignment', id: Number(parts[1]) })
+      } else {
+        setRoute({ page: 'home', id: null })
+      }
+    }
+    parseHash()
+    window.addEventListener('hashchange', parseHash)
+    return () => window.removeEventListener('hashchange', parseHash)
+  }, [])
+
+  if (route.page === 'assignment') {
+    if (route.id === 2) {
+      return <Assignment2 />
+    }
+    if (route.id === 1) {
+      return <Assignment1 />
+    }
+    // fallback simple assignment page
+    const a = assignments.find((x) => x.id === route.id)
+    return (
+      <div className="site-root">
+        <header className="site-header">
+          <div className="header-inner">
+            <div className="brand">Amanda Longo</div>
+            <div className="email">
+              <a href="#">Home</a>
+            </div>
+          </div>
+        </header>
+        <main className="site-main">
+          <div style={{ maxWidth: 900, margin: '40px auto', padding: '0 20px' }}>
+            <h1>{a ? a.title : 'Assignment'}</h1>
+            <p style={{ color: 'var(--muted)' }}>{a ? a.short : 'No details.'}</p>
+          </div>
+        </main>
+      </div>
+    )
+  }
+
   return (
     <div className="site-root">
       <header className="site-header">
@@ -61,11 +110,28 @@ function App() {
             <h3 className="sidebar-title">Assignments</h3>
             <div className="sidebar-list">
               {assignments.map((a) => (
-                <article className="card" key={a.id}>
-                  <div className="card-content">
-                    <h4>{a.title}</h4>
-                    <p className="card-desc">{a.short}</p>
-                  </div>
+                <article
+                  key={a.id}
+                  className="card"
+                  onClick={() => { window.location.hash = `#/assignments/${a.id}` }}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      window.location.hash = `#/assignments/${a.id}`
+                    }
+                  }}
+                >
+                  <a
+                    className="card-link"
+                    href={`#/assignments/${a.id}`}
+                    onFocus={() => { window.location.hash = `#/assignments/${a.id}` }}
+                    aria-label={`Open ${a.title}`}
+                  >
+                    <div className="card-content">
+                      <h4>{a.title}</h4>
+                      <p className="card-desc">{a.short}</p>
+                    </div>
+                  </a>
                   <div className="card-thumb">
                     <img src={a.image} alt="preview" />
                   </div>

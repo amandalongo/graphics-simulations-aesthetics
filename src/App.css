@@ -193,6 +193,12 @@ html, body, #root {
   background: transparent;
   border-radius: 0;
   border: none;
+  transition: box-shadow 0.12s ease, transform 0.12s ease, outline-offset 0.12s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-2px);
 }
 
 .card-content h4 {
@@ -220,6 +226,13 @@ html, body, #root {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.04);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 @media (max-width: 880px) {
