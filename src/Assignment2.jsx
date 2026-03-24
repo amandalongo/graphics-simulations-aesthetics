@@ -49,7 +49,13 @@ export default function Assignment2() {
                 justifyContent: "flex-start",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <pre
                   style={{
                     color: "var(--muted)",
@@ -131,8 +137,8 @@ export default function Assignment2() {
     return out;
   }
   `}</pre>
-               </div>
-             </div>
+              </div>
+            </div>
           </div>
           <p
             style={{
@@ -194,17 +200,17 @@ export default function Assignment2() {
               basic shape, a circle since we had learned it during the second
               class, and then I wanted to create something “interstellar” so
               some sort of planet or galaxy vibe. I wanted it to start off more
-              cold colored (which is why i chose the blue and green) and then
+              cold colors (which is why I chose the blue and green) and then
               when the animation got a little more complex, add in those warmer
-              colors to show speed and add more liveliness to it. the rings were
-              supposed to represent galaxy/saturn and then the dots, lines and
-              spinning mixed in with the pulsing lines are supposed to represent
-              like moving through space. I really liked how much emphasis the
-              pulse added to the overall vision. I wanted to use music to add
-              the final touch because I feel like sound really adds emotion and
-              emphasis on visuals, like all of the examples we watched in class.
-              I like techno and edm style music and this one song/beat I used
-              really matched the movements of the visual.
+              colors (pinks/reds) to show speed and add more liveliness to it.
+              the rings were supposed to represent galaxy/saturn and then the
+              dots, lines and spinning mixed in with the pulsing lines are
+              supposed to represent moving through space. I really liked how
+              much emphasis the pulse added to the overall vision. I wanted to
+              use music to add the final touch because I feel like sound really
+              adds emotion and emphasis on visuals, like all of the examples we
+              watched in class. I like techno and edm style music and this one
+              song/beat I used really matched the movements of the visual.
             </p>
           </div>
           <p
