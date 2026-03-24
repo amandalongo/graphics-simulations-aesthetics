@@ -2,7 +2,7 @@ import heroImg from './assets/200.gif'
 
 export default function Assignment1() {
   return (
-    <div className="site-root">
+    <div className="site-root scrollable">
       <header className="site-header">
         <div className="header-inner">
           <div className="brand">Amanda Longo</div>

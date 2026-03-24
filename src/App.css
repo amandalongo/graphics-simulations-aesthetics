@@ -69,8 +69,13 @@ html, body, #root {
 
 .site-main {
   flex: 1 1 auto;
-  overflow: hidden; /* keep scrolling inside columns only */
+  overflow: hidden;
   padding: 48px 80px;
+}
+
+.site-root.scrollable .site-main {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .layout {

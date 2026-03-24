@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import heroImg from './assets/200.gif'
 import gif1 from './assets/catworking.gif'
 import gif2 from './assets/punch.gif'
+import gif3 from './assets/djcat.gif'
 import Assignment2 from './Assignment2'
 import Assignment1 from './Assignment1'
 import './App.css'
@@ -18,7 +19,7 @@ function App() {
       id: 2,
       title: 'Assignment 2: Shader Live Coding',
       short: 'A 1 minute animation using the Schwartz environment. Click here for all details on the assignment!',
-      image: heroImg,
+      image: gif3,
     },
     {
       id: 3,
