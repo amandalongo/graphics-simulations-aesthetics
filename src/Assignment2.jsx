@@ -74,19 +74,19 @@ export default function Assignment2() {
                   }}
                 >{`@fragment
 fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
-  let uv  = uvN(pos.xy);
-  let t   = seconds();
+  let uv = uvN(pos.xy);
+  let t = seconds();
   let cycle = t % 60.0;
-  let p   = uv - vec2f(0.5);
-  let dist  = sqrt(dot(p, p));
+  let p = uv - vec2f(0.5);
+  let dist = sqrt(dot(p, p));
   let pulse = 0.5 + 0.5 * sin(t * 2.0);
 
   let dotRadius = 0.04 + pulse * 0.03;
   let centerDot = smoothstep(dotRadius + 0.005, dotRadius, dist);
-  let ring      = smoothstep(0.008, 0.002, abs(dist - (0.1 + pulse * 0.15)));
+  let ring = smoothstep(0.008, 0.002, abs(dist - (0.1 + pulse * 0.15)));
   let spokeRing = smoothstep(0.35, 0.3, dist) * smoothstep(0.05, 0.1, dist);
   let radialLines = step(0.97, abs(sin(atan2(p.y, p.x) * 6.0 + t * 1.5))) * spokeRing;
-  let shimmer   = 0.5 + 0.5 * dot(normalize(p), vec2f(cos(t * 0.4), sin(t * 0.4)));
+  let shimmer = 0.5 + 0.5 * dot(normalize(p), vec2f(cos(t * 0.4), sin(t * 0.4)));
   let outerRing = smoothstep(0.005, 0.0, abs(dist - (0.3 + 0.05 * sin(t * 3.0))));
   let phaseBlend = clamp((cycle % 20.0) / 20.0, 0.0, 1.0);
 
