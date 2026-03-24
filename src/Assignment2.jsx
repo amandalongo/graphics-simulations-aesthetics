@@ -233,7 +233,7 @@ fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
               marginTop: 20,
             }}
           >
-            <b>Note:</b> I used ChatGPT to help understand the concept of cycles and how to implement the 60 second looping into this animation, I think that with this assistance I tended to get a little more confused, especially when I was realizing that the cycling wasn't working as I expected (the cycles were less than 20-60 seconds) so this concept is something I want to learn a little more on my own! Next time, I think I would want to try more real time coding or just pasting in different fragments of code to create that animation. 
+            <b>Note:</b> I used ChatGPT to help understand the concept of cycles and how to implement the 60 second looping (lastFrame) into this animation, I think that with this assistance I tended to get a little more confused, especially when I was realizing that the cycling wasn't working as I expected (the cycles were less than 20-60 seconds) so this concept is something I want to learn a little more on my own! Next time, I think I would want to try more real time coding or just pasting in different fragments of code to create that animation. I also found it helpful to take different functions and search how they work visually after looking at the mathematics of it, because it helped me learn the purpose easier, for example: smoothstep.  
           </p>
         </div>
       </main>
